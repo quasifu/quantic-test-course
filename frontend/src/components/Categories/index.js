@@ -8,10 +8,17 @@ export default function Categories() {
         .get(
           'http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/category/?format=json'
         )
-        .then((response) => {
-          console.log(response);
+        .then(({ data }) => {
+          if (data.status === 'success') setCategories(data.data);
         });
     }
   }, [categories]);
-  return <>Categories</>;
+  return (
+    <ul>
+      {categories &&
+        categories.map((category) => (
+          <li key={category.name}>{category.name}</li>
+        ))}
+    </ul>
+  );
 }
