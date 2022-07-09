@@ -30,4 +30,4 @@ jobs:
           environment_name: hangry-api-dev
           version_label: ${{ GITHUB.RUN_ID}}
           region: us-east-1
-          deployment_package: deploy.zip
+          deployment_package: backend/deploy.zip
