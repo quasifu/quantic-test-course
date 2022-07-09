@@ -1,5 +1,6 @@
 # base image  
-FROM node:18-alpine3.15
+FROM node:18
+
 # set working direction
 WORKDIR /app
 # add `/app/node_modules/.bin` to $PATH
