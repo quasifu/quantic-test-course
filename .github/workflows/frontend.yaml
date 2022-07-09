@@ -19,6 +19,7 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v2
+      - run: npm install && npm run build
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
       - name: Deploy to EB
