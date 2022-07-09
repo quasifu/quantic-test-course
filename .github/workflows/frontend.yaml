@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install && npm run build
       - name: Generate deployment package
-        run: zip -r deploy.zip . -x '*.git*'
+        run: zip -r deploy.zip build Dockerfile
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
         with:
