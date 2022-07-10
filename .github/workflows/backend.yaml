@@ -12,7 +12,26 @@ on:
     paths:
       - 'backend/**'
 jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest django_mock_queries six
+      - name: Unit Tests
+        run: |
+          pytest
   deploy:
+    needs: [build_and_test]
     runs-on: ubuntu-latest
     defaults:
       run:
