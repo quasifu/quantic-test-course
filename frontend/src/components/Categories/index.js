@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-export default function Categories() {
+import style from './Categories.module.scss';
+
+export default function Categories({ onSelect }) {
   const [categories, setCategories] = useState();
+  const [selectedCat, setSelectedCat] = useState();
   useEffect(() => {
     if (!categories) {
       axios
@@ -14,11 +17,25 @@ export default function Categories() {
     }
   }, [categories]);
   return (
-    <ul>
+    <div className={style.wrapper}>
       {categories &&
         categories.map((category) => (
-          <li key={category.name}>{category.name}</li>
+          <span
+            className={style.item}
+            style={{
+              borderBottom: `${
+                selectedCat === category.name ? '1px solid black' : ''
+              }`,
+            }}
+            key={category.name}
+            onClick={() => {
+              setSelectedCat(category.name);
+              onSelect(category.name);
+            }}
+          >
+            {category.name}
+          </span>
         ))}
-    </ul>
+    </div>
   );
 }
