@@ -5,3 +5,6 @@ Requires Python3
 Frontend created with npx create-react-app
 Requires Node version 18
 Starter application for Quantic Test Course. Copyright 2022 Quantic.
+
+Related Articles:
+https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/
