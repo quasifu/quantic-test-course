@@ -3,6 +3,7 @@ import style from './App.module.scss';
 import Header from './components/Header';
 import Home from './pages/Home';
 import { OrderContextProvider } from './context/OrderContext';
+import Order from './pages/Order';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/order' element={<Order />} />
         </Routes>
       </OrderContextProvider>
     </div>
