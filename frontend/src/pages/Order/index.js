@@ -8,6 +8,8 @@ export default function Order() {
   const { orderName, orderItems } = useContext(OrderContext);
   const [deliveryDistance, setDeliveryDistance] = useState(0);
   const [deliveryFee, setDeliveryFee] = useState(0);
+  const [subtotal, setSubtotal] = useState(0);
+
   const renderItem = (orderItem, idx) => {
     return (
       <div className={style.itemWrapper} key={idx}>
@@ -20,7 +22,7 @@ export default function Order() {
   const renderDelivery = () => {
     return (
       <div className={style.itemWrapper}>
-        <span className={style.item}>What's your distance:</span>
+        <span className={style.item}>What's your distance?</span>
         <select
           value={deliveryDistance}
           onChange={(event) => {
@@ -37,11 +39,21 @@ export default function Order() {
     );
   };
 
-  const renderDeliveryFee = () => {
+  const renderFee = (name, cost) => {
+    // Create our number formatter.
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+
+      // These options are needed to round to whole numbers if that's what you want.
+      //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+      //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+
     return (
       <div className={style.itemWrapper}>
-        <span className={style.item}>Delivery Fee</span>
-        <span>{deliveryFee}</span>
+        <span className={style.item}>{name}</span>
+        <span>{formatter.format(cost)}</span>
       </div>
     );
   };
@@ -54,12 +66,22 @@ export default function Order() {
           setDeliveryFee(response.data.data);
         }
       });
-  }, [deliveryDistance, orderName]);
+    axios.get(`${API_URL}/api/subtotal/${orderName}`).then((response) => {
+      if (response.data.status === 'success') {
+        setSubtotal(response.data.data);
+      }
+    });
+  }, [deliveryDistance, orderName, subtotal]);
   return (
     <div className={style.wrapper}>
       {orderItems.length > 0 && renderDelivery()}
+      <h3>Your Order</h3>
       {orderItems.map((orderItem, idx) => renderItem(orderItem, idx))}
-      {renderDeliveryFee()}
+      {renderFee('Subtotal', subtotal)}
+      {renderFee('Delivery Fee', deliveryFee)}
+      <div className={style.bottomLine}>
+        {renderFee('Total', deliveryFee + subtotal)}
+      </div>
     </div>
   );
 }
