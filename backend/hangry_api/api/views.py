@@ -1,4 +1,5 @@
 #from django.shortcuts import render
+import json
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -45,13 +46,8 @@ class CategoryViews(APIView):
         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
 
 class OrderViews(APIView):
-    def post(self, request):
-        serializer = OrderSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-        else:
-            return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+    permission_classes = ()
+    authentication_classes = ()
 
     def get(self, request, name=None):
         if name:
@@ -63,8 +59,22 @@ class OrderViews(APIView):
         serializer = OrderSerializer(items, many=True)
         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
 
+    def post(self, request):
+        data = json.loads(request.body)
+        foodId = data.get('item',None)
+        quantity = data.get('quantity', None)
+        orderName = data.get('name', None)
+        foodItem = Food.objects.get(id = foodId)
+        order = Order()
+        order.name = orderName
+        order.quantity = quantity
+        order.item = foodItem
+        order.save()
+        serializer = OrderSerializer(order)
+        return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
+
 class DeliveryView(APIView):
     def get(self, request, name=None, distance=0):
-      items = Order.objects.filter(name__iexact=name)
-      deliveryCost = Delivery.calculate(items,distance)
-      return Response({"status": "success", "data": deliveryCost}, status=status.HTTP_200_OK)
+        items = Order.objects.filter(name__iexact=name)
+        deliveryCost = Delivery.calculate(items,distance)
+        return Response({"status": "success", "data": deliveryCost}, status=status.HTTP_200_OK)
