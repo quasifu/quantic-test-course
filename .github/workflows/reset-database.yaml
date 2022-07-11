@@ -2,10 +2,9 @@ name: Resetting Backend Database
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/30 * * * *'
 jobs:
   deploy:
-    needs: [build_and_test]
     runs-on: ubuntu-latest
     defaults:
       run:
