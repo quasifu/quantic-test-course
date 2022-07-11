@@ -9,3 +9,10 @@ class Delivery():
       return 5
     else:
       return 2.5
+
+class Subtotal():
+  def calculate(order):
+    cost = 0
+    for item in order:
+      cost += item.quantity * item.item.price
+    return cost

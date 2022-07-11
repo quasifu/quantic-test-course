@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from .serializers import FoodSerializer, CategorySerializer, OrderSerializer
 from .models import Food, Category, Order
-from .controllers import Delivery
+from .controllers import Delivery, Subtotal
 
 class FoodViews(APIView):
     def post(self, request):
@@ -78,3 +78,9 @@ class DeliveryView(APIView):
         items = Order.objects.filter(name__iexact=name)
         deliveryCost = Delivery.calculate(items,distance)
         return Response({"status": "success", "data": deliveryCost}, status=status.HTTP_200_OK)
+
+class SubtotalView(APIView):
+    def get(self, request, name=None, distance=0):
+        items = Order.objects.filter(name__iexact=name)
+        subtotal = Subtotal.calculate(items)
+        return Response({"status": "success", "data": subtotal}, status=status.HTTP_200_OK)
