@@ -1,19 +1,16 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import style from './Categories.module.scss';
+import { API_URL } from '../../utils/constants';
 
 export default function Categories({ onSelect }) {
   const [categories, setCategories] = useState();
   const [selectedCat, setSelectedCat] = useState();
   useEffect(() => {
     if (!categories) {
-      axios
-        .get(
-          'http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/category/?format=json'
-        )
-        .then(({ data }) => {
-          if (data.status === 'success') setCategories(data.data);
-        });
+      axios.get(`${API_URL}/api/category/?format=json`).then(({ data }) => {
+        if (data.status === 'success') setCategories(data.data);
+      });
     }
   }, [categories]);
   return (

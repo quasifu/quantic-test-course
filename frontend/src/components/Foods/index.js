@@ -2,21 +2,17 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import style from './Foods.module.scss';
 import FoodItem from '../FoodItem';
-
+import { API_URL } from '../../utils/constants';
 export default function Foods({ category }) {
   const [food, setFood] = useState();
 
   useEffect(() => {
     if (!food) {
-      axios
-        .get(
-          'http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/food/?format=json'
-        )
-        .then(({ data }) => {
-          if (data.status === 'success') {
-            setFood(data.data);
-          }
-        });
+      axios.get(`${API_URL}/api/food/?format=json`).then(({ data }) => {
+        if (data.status === 'success') {
+          setFood(data.data);
+        }
+      });
     }
   }, [food]);
 

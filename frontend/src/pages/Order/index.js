@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import OrderContext from '../../context/OrderContext';
+import { API_URL } from '../../utils/constants';
 import style from './Order.module.scss';
 
 export default function Order() {
@@ -47,15 +48,13 @@ export default function Order() {
 
   useEffect(() => {
     axios
-      .get(
-        `http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/delivery/${orderName}/${deliveryDistance}`
-      )
+      .get(`${API_URL}/api/delivery/${orderName}/${deliveryDistance}`)
       .then((response) => {
         if (response.data.status === 'success') {
           setDeliveryFee(response.data.data);
         }
       });
-  }, [deliveryDistance]);
+  }, [deliveryDistance, orderName]);
   return (
     <div className={style.wrapper}>
       {orderItems.length > 0 && renderDelivery()}

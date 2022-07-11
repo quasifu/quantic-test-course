@@ -2,21 +2,19 @@ import { createContext, useEffect } from 'react';
 import { generateSlug } from 'random-word-slugs';
 import { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../utils/constants';
 const OrderContext = createContext();
 
 const OrderContextProvider = function ({ children }) {
-  const [orderName] = useState('acrid-faint-stone'); //generateSlug());
+  const [orderName] = useState(generateSlug());
   const [orderItems, setOrderItems] = useState([]);
   const [orderInitialized, setOrderInitialized] = useState(false);
   const addItem = async (item, quantity) => {
-    const response = await axios.post(
-      'http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/order/',
-      {
-        name: orderName,
-        item: item.id,
-        quantity: quantity,
-      }
-    );
+    const response = await axios.post(`${API_URL}/api/order/`, {
+      name: orderName,
+      item: item.id,
+      quantity: quantity,
+    });
     if (response.data.status === 'success') {
       getOrderItems();
     }
@@ -24,7 +22,7 @@ const OrderContextProvider = function ({ children }) {
 
   const getOrderItems = async () => {
     const orderItemsResponse = await axios.get(
-      `http://hangry-api-dev.us-east-1.elasticbeanstalk.com/api/order/${orderName}`
+      `${API_URL}/api/order/${orderName}`
     );
     if (orderItemsResponse.data.status === 'success') {
       setOrderItems(orderItemsResponse.data.data);
@@ -35,9 +33,17 @@ const OrderContextProvider = function ({ children }) {
   useEffect(() => {
     if (!orderInitialized) {
       setOrderInitialized(true);
-      getOrderItems();
+      async function initOrderItems() {
+        const orderItemsResponse = await axios.get(
+          `${API_URL}/api/order/${orderName}`
+        );
+        if (orderItemsResponse.data.status === 'success') {
+          setOrderItems(orderItemsResponse.data.data);
+        }
+      }
+      initOrderItems();
     }
-  }, [orderInitialized]);
+  }, [orderInitialized, orderName]);
   return (
     <OrderContext.Provider
       value={{ orderName, addItem, orderItems, getOrderItems }}
