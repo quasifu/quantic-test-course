@@ -2,7 +2,7 @@ name: Deploy Hangry Hippo to Elastic Beanstalk
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
 jobs:
   deploy:
     needs: [build_and_test]
