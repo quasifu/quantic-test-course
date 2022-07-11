@@ -1,8 +1,8 @@
-name: Deploy Hangry Hippo to Elastic Beanstalk
+name: Resetting Backend Database
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   deploy:
     needs: [build_and_test]
