@@ -28,6 +28,7 @@ jobs:
           echo "DEBUG_VALUE=True" >> "$GITHUB_ENV"
       - name: Disable Debug
         run: |
+          pwd
           eval "echo \"$(cat hangry_api/hangry_api/settings.js.template)\"" > hangry_api/hangry_api/settings.js
           rm hangry_api/hangry_api/settings.js.template
       - name: Install dependencies
