@@ -17,6 +17,7 @@ class Subtotal():
       cost += item.quantity * item.item.price
     return cost
 
+#Stubbed Total
 class Total():
-  def calculate(order, distance):
+  def calculate(order, deliveryFee):
     return 16.24
