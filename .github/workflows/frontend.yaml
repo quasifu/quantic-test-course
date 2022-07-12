@@ -32,3 +32,8 @@ jobs:
           version_label: ${{ GITHUB.RUN_ID}}
           region: us-east-1
           deployment_package: frontend/deploy.zip
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          # Specify Browser since container image is compile with Chrome
+          browser: chrome
