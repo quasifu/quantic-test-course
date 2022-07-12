@@ -15,3 +15,10 @@ def test_ComplexCost():
   order.add(MockModel(quantity=1, item=MockModel(price=4.5)))
   cost = Total.calculate(order, 5)
   assert cost == 17.86
+
+def test_Boundaries():
+  order = MockSet()
+  order.add(MockModel(quantity=2, item=MockModel(price=-3.5)))
+  order.add(MockModel(quantity=1, item=MockModel(price=1.5)))
+  cost = Total.calculate(order, 5)
+  assert cost == 0
