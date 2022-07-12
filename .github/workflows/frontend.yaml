@@ -33,6 +33,7 @@ jobs:
           region: us-east-1
           deployment_package: frontend/deploy.zip
   acceptance_test:
+    needs: [deploy]
     runs-on: ubuntu-latest
     container: cypress/included:10.3.0
     defaults:
