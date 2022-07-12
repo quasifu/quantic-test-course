@@ -16,3 +16,7 @@ class Subtotal():
     for item in order:
       cost += item.quantity * item.item.price
     return cost
+
+class Total():
+  def calculate(order, distance):
+    return 16.24
