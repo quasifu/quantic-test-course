@@ -40,7 +40,7 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v2
-      - run: cypress run
+      - run: cypress run --config-file=cypress.config.js
       - uses: actions/upload-artifact@v2
         if: always()
         with:
