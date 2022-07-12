@@ -34,7 +34,7 @@ jobs:
           deployment_package: frontend/deploy.zip
   acceptance_test:
     runs-on: ubuntu-latest
-    container: cypress/included:3.8.3
+    container: cypress/included:10.3.0
     defaults:
       run:
         working-directory: frontend
