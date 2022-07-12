@@ -34,13 +34,13 @@ jobs:
           deployment_package: frontend/deploy.zip
   acceptance_test:
     runs-on: ubuntu-latest
+    container: cypress/included:3.8.3
+    defaults:
+      run:
+        working-directory: frontend
     steps:
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          # Specify Browser since container image is compile with Chrome
-          browser: chrome
-          project: ./frontend
+      - uses: actions/checkout@v2
+      - run: cypress run
       - uses: actions/upload-artifact@v2
         if: always()
         with:
