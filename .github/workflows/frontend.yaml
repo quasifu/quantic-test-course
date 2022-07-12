@@ -32,8 +32,17 @@ jobs:
           version_label: ${{ GITHUB.RUN_ID}}
           region: us-east-1
           deployment_package: frontend/deploy.zip
+  acceptance_test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           # Specify Browser since container image is compile with Chrome
           browser: chrome
+          project: ./frontend
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
