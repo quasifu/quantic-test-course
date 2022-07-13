@@ -32,3 +32,18 @@ jobs:
           version_label: ${{ GITHUB.RUN_ID}}
           region: us-east-1
           deployment_package: frontend/deploy.zip
+  acceptance_test:
+    needs: [deploy]
+    runs-on: ubuntu-latest
+    container: cypress/included:10.3.0
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+      - run: cypress run --config-file=cypress.config.js
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress-videos
+          path: frontend/cypress/videos
