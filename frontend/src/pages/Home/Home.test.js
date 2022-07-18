@@ -27,11 +27,14 @@ describe('Test Home', () => {
             },
           });
         default:
-          return Promise.resolve({ data: 'a' });
+          return Promise.resolve({
+            data: {
+              status: 'fail',
+            },
+          });
       }
     });
     render(<Home />);
-    await waitFor(() => screen.findAllByTestId(/category-item/i));
     expect(await screen.findAllByTestId(/category-item/i)).toHaveLength(2);
     expect(await screen.findByText('Appeteasers')).toBeInTheDocument();
   });
