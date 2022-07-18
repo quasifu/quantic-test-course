@@ -25,6 +25,7 @@ export default function Categories({ onSelect }) {
               }`,
             }}
             key={category.name}
+            data-testid='category-item'
             onClick={() => {
               setSelectedCat(category.name);
               onSelect(category.name);
