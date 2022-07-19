@@ -71,24 +71,48 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
       ![Food Item Details API](./readme-images/food-detail-api.jpeg)
 
     - http://127.0.0.1:8000/api/category/
+
       ![Food Categories Details API](./readme-images/category-api.jpeg)
+
     - http://127.0.0.1:8000/api/category/1
+
       ![Food Category Details API](./readme-images/category-details-api.jpeg)
+
     - http://127.0.0.1:8000/api/order/
+
       ![Orders API](./readme-images/order-api.jpeg)
+
     - http://127.0.0.1:8000/api/order/Hippo
+
       ![Order Details API](./readme-images/order-details-api.jpeg)
+
     - http://127.0.0.1:8000/api/delivery/Hippo/4
+
       ![Delivery Fee API](./readme-images/delivery-fee-api.jpeg)
+
     - http://127.0.0.1:8000/api/subtotal/Hippo
+
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
-# To run tests
+### To run backend unit tests
 
 1.  Install the test dependencies
 
         pip install pytest django_mock_queries six
 
-2.  pytest
+2.  Run the tests
+
+        pytest
+
+3.  You should see something like the screen below
+
+        ================= test session starts ===================
+        platform linux -- Python 3.8.13, pytest-7.1.2, pluggy-1.0.0
+        rootdir: ./quantic-test-course/backend/hangry_api
+        collected 5 items
+
+        tests/test_DeliveryCost.py ...                     [ 60%]
+        tests/test_SubtotalCost.py ..                      [100%]
+        ================= 5 passed in 0.16s =====================
 
 Starter application for Quantic Test Course. &copy; 2022 Quantic.
