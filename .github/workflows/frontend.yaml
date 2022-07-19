@@ -12,7 +12,18 @@ on:
     paths:
       - 'frontend/**'
 jobs:
+  function_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: Run functional tests
+        run: npm test -- --coverage --watchAll=false
   deploy:
+    needs: [function_test]
     runs-on: ubuntu-latest
     defaults:
       run:

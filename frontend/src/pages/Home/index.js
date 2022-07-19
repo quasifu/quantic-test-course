@@ -8,7 +8,9 @@ export default function Home() {
   const [category, setCategory] = useState();
   return (
     <div className={style.wrapper}>
-      <Categories onSelect={(category) => setCategory(category)} />
+      <div data-testid='categories'>
+        <Categories onSelect={(category) => setCategory(category)} />
+      </div>
       {category ? <Foods category={category} /> : <Welcome />}
     </div>
   );
