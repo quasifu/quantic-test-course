@@ -115,4 +115,143 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
 
-Starter application for Quantic Test Course. &copy; 2022 Quantic.
+### To run the frontend
+
+1.  Change directory to the frontend
+
+        cd frontend
+
+2.  Install dependencies
+
+        npm install
+
+3.  Run the server
+
+        npm run start
+
+4.  A new browser window will open Hangry Hippo at http://localhost:3000
+
+    ![Web site](./readme-images/hangry-hippo-web.png)
+
+5.  [Optional] to use the local backend apis, make sure both servers (frontend and backend) are running. Then, update ./frontend/src/utils/constants.js
+
+    Replace this line:
+
+        export const API_URL = 'http://hangry-api-dev.us-east-1.elasticbeanstalk.com';
+
+    With this line:
+
+        export const API_URL = 'http://localhost:8000';
+
+### To run frontend tests
+
+1.  Run the tests from the `frontend` folder
+
+        npm test
+
+2.  You should see something like...
+
+         PASS  src/pages/Home/Home.test.js
+         PASS  src/App.test.js
+         Test Suites: 2 passed, 2 total
+         Tests:       3 passed, 3 total
+         Snapshots:   0 total
+         Time:        2.715 s, estimated 3 s
+         Ran all test suites.
+
+### To run End User Acceptance tests
+
+1.  Run Cypress from the `frontend` folder
+
+        node_modules/.bin/cypress run
+
+2.  Verify that the tests were run. You should see something like..
+
+        ==============================================
+        (Run Starting)
+        ┌─────────────────────────────────────────────┐
+        │ Cypress:        10.3.0                      │
+        │ Browser:        Electron 100 (headless)     │
+        │ Node Version:   v18.5.0                     │
+        │ Specs:          1 found (spec.cy.js)        │
+        │ Searched:       cypress/e2e/**/*.cy.{js,jsx}│
+        └─────────────────────────────────────────────┘
+        ───────────────────────────────────────────────
+
+        Running:  spec.cy.js                   (1 of 1)
+
+        Hits Home Page
+        ✓ passes (772ms)
+        ✓ displays the Welcome message (76ms)
+
+        Hits Order Page
+        ✓ passes (426ms)
+        ✓ shows Your Order title (109ms)
+
+
+        4 passing (4s)
+
+
+        (Results)
+
+        ┌────────────────────────────────────────────┐
+        │ Tests:        4                            │
+        │ Passing:      4                            │
+        │ Failing:      0                            │
+        │ Pending:      0                            │
+        │ Skipped:      0                            │
+        │ Screenshots:  0                            │
+        │ Video:        true                         │
+        │ Duration:     3 seconds                    │
+        │ Spec Ran:     spec.cy.js                   │
+        └────────────────────────────────────────────┘
+
+
+        (Video)
+
+          -  Started processing:  Compressing to 32 CRF
+          -  Finished processing: /quantic-test-course/frontend/cypress/videos/spec.cy.js.mp4     (2 seconds)
+
+
+        ===============================================
+
+        (Run Finished)
+
+
+        Spec             Tests  Passing  Failing  Pending  Skipped
+        ┌─────────────────────────────────────────────────────────┐
+        │ ✔spec.cy.js(00:03) 4      4        -        -         - │
+        └─────────────────────────────────────────────────────────┘
+          ✔All specs passed! 4      4        -        -        -
+
+3.  [Optional] To watch the automated acceptance test run, open the video located at
+
+        /frontend/cypress/videos/spec.cy.js.mp4
+
+4.  [Optional] To run the tests using the Cypress application, open cypress using
+
+        node_modules/.bin/cypress open
+
+## More Information about Testing in this Repo
+
+### Unit Testing
+
+Unit testing is implemented in the `backend` using [pytest](https://docs.pytest.org/en/7.1.x/getting-started.html).
+
+### Functional Testing
+
+Functional testing is implemented in the `frontend` for the `Home` page using [jest](https://jestjs.io/).
+
+### Acceptance Testing
+
+Acceptance tests are implemented in the `frontend` for `Home` and `Order` pages using [cypress](https://www.cypress.io/).
+
+### Security Testing
+
+Security testing is implemented in the `frontend` using [ZAP](https://owasp.org/www-project-zap/). For more information on security testing, visit [OWASP](https://owasp.org/).
+
+### Automated Testing
+
+All of the tests are automated into the CI/CD pipeline using [GitHub Actions](https://github.com/features/actions). GitHub Actions are defined in this repository in the `.github/workflows` folder. Feel free to view the automated runs under the [Actions](https://github.com/quasifu/quantic-test-course/actions) tab of this repository.
+
+&copy; 2022 Quantic School of Business and Technology
