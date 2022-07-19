@@ -4,6 +4,10 @@ import axios from 'axios';
 import Home from '.';
 
 describe('Test Home', () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   test('Test Render', async () => {
     const mockGet = jest.spyOn(axios, 'get');
     mockGet.mockImplementation((url) => {
@@ -71,5 +75,13 @@ describe('Test Home', () => {
     });
     render(<Home />);
     expect(screen.queryByTestId(/category-item/i)).not.toBeInTheDocument();
+  });
+
+  //Copied "Test Render"
+  test('Test Integration Render', async () => {
+    //Deleted the mock calls.  There is no Arrange for this test.
+    render(<Home />);
+    expect(await screen.findAllByTestId(/category-item/i)).toHaveLength(2);
+    expect(await screen.findByText('Appeteasers')).toBeInTheDocument();
   });
 });
