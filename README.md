@@ -2,6 +2,21 @@
 
 This repository supports the Software Testing Course for the Masters of Software Engineering at [quantic.edu](https://quantic.edu).
 
+## Table of Contents
+
+- [Hangry Hippo - a fictitious company](#hangry-hippo)
+- [Requirements](#requirements)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Local Installation](#local-installation)
+  - [Install the Backend](#to-run-the-backend)
+  - [Install the Frontend](#to-run-the-frontend)
+- Testing
+  - [Run Backend Tests](#to-run-backend-unit-tests)
+  - [Run Functional Tests](#to-run-frontend-tests)
+  - [Run Acceptance Tests](#to-run-end-user-acceptance-tests)
+- [More Information about Testing](#more-information-about-testing-in-this-repo)
+
 ## Hangry Hippo
 
 ![Hangry Hippo](./frontend/public/hangry-hippo.gif)
