@@ -61,7 +61,7 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
 
 3.  Activate the environment
 
-    > **Note:** The `activate` script activates that environment, and your command prompt will change to reflect that you're in the `env` environment. You only need to create the evironment once; for subsequent sessions just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).
+    > **Note:** The `activate` script activates that environment, and your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; for subsequent sessions just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).
 
     Windows:
 
