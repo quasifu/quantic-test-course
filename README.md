@@ -53,11 +53,15 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
 
         cd backend
 
-2.  Setup a virtual environment
+2.  Setup a virtual environment.
+
+    > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
 
         python3 -m venv env
 
 3.  Activate the environment
+
+    > **Note:** The `activate` script activates that environment, and your command prompt will change to reflect that you're in the `env` environment. You only need to create the evironment once; for subsequent sessions just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).
 
     Windows:
 
@@ -72,6 +76,8 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
         pip install
 
 5.  Run the server
+
+    > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so: `.\manage.py runserver` (for Windows) `./manage.py runserver` (for macOS/Linux).
 
           ./manage.py runserver
 
@@ -116,6 +122,8 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
         pip install pytest django_mock_queries six
 
 2.  Run the tests
+
+    > **Note:** The server shouldn't be running when you run tests.
 
         pytest
 
