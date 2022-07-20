@@ -20,6 +20,7 @@ This repository supports the Software Testing Course for the Masters of Software
 ## Hangry Hippo
 
 ![Hangry Hippo](./frontend/public/hangry-hippo.gif)
+
 Hangry Hippo is a fictitious fast food company. They are developing a new online ordering system.
 
 During the course, we will be developing different types of test cases to verify the online ordering functionality.
