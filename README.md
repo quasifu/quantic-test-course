@@ -34,7 +34,7 @@ The Hangry Hippo application is divided into a Backend and a Frontend. It is pre
 The backend was originally created using [django](https://www.djangoproject.com/) and [djangorestframework](https://www.django-rest-framework.org/). For more information, please read
 https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/
 
-The backend requires [Pytho 3.8](https://www.python.org/downloads/). We recommend using a [Python Version Manager](https://realpython.com/intro-to-pyenv/).
+The backend requires [Python 3.8](https://www.python.org/downloads/). We recommend using a [Python Version Manager](https://realpython.com/intro-to-pyenv/).
 
 ### Frontend
 
@@ -52,7 +52,13 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
 
 1.  Change directory to the backend
 
-        cd backend
+    Windows:
+    
+        cd quantic-test-courses\backend\hangry_api
+    
+    macOS/Linux:
+
+        cd quantic-test-course/backend/hangry_api
 
 2.  Setup a virtual environment.
 
@@ -66,21 +72,21 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
 
     Windows:
 
-        source env/bin/activate
+        env\Scripts\activate
 
-    Mac/Linux:
+    macOS/Linux:
 
         . env/bin/activate
 
 4.  Install the dependencies
 
-        pip install
+        pip install -r requirements.txt
 
 5.  Run the server
 
     > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so: `.\manage.py runserver` (for Windows) `./manage.py runserver` (for macOS/Linux).
 
-          ./manage.py runserver
+          manage.py runserver
 
 6.  Verify the server is running by accessing the following API's.
 
