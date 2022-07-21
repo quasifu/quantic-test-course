@@ -20,7 +20,9 @@ This repository supports the Software Testing course for the Masters of Science 
 
 ## Hangry Hippo
 
-<img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="200"/>
+\begin{center}
+<img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="300"/>
+\end{center}
 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
