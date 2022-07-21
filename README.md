@@ -1,6 +1,6 @@
 # quantic-test-course
 
-This repository supports the Software Testing course for the Masters of Science in Software Design and Engineering degree program at Quantic School of Business & Technology.
+This repository supports the Software Testing course for the Masters of Science in Software Design and Engineering program at Quantic School of Business & Technology.
 
 
 ## Table of Contents
@@ -20,7 +20,7 @@ This repository supports the Software Testing course for the Masters of Science 
 
 ## Hangry Hippo
 
-![Hangry Hippo](./frontend/public/hangry-hippo.gif)
+<img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="200"/>
 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
