@@ -5,18 +5,17 @@ This repository supports the Software Testing course for the Masters of Science 
 
 ## Table of Contents
 
-- [Hangry Hippo - a fictitious company](#hangry-hippo)
-- [Requirements](#requirements)
+- What is [Hangry Hippo](#hangry-hippo)?
+- [I. Requirements](#requirements)
   - [Backend](#backend)
   - [Frontend](#frontend)
-- [Local Installation](#local-installation)
-  - [Install the Backend](#to-run-the-backend)
-  - [Install the Frontend](#to-run-the-frontend)
-- Testing
-  - [Run Backend Tests](#to-run-backend-unit-tests)
-  - [Run Functional Tests](#to-run-frontend-tests)
-  - [Run Acceptance Tests](#to-run-end-user-acceptance-tests)
-- [More Information about Testing](#more-information-about-testing-in-this-repo)
+- [II. Local Installation](#local-installation)
+- [III. Running the Backend](#running-the-backend)
+- [IV. Running Backend Unit Tests](#running-backend-unit-tests)
+- [V. Running the Frontend](#running-the-frontend)
+- [VI. Running Frontend Functional Tests](#running-frontend-functional-tests)
+- [VII. Running User Acceptance Tests](#running-user-acceptance-tests)
+- [VIII. More Information about Testing](#more-information-about-testing-in-this-repo)
 
 
 ## Hangry Hippo
@@ -137,7 +136,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
-## IV. Running Back-End Unit Tests
+## IV. Running Backend Unit Tests
 
 1.  Install the test dependencies.
 
@@ -186,7 +185,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
         export const API_URL = 'http://localhost:8000';
 
-## VI. Running Front-End Tests
+## VI. Running Frontend Functional Tests
 
 1.  Run the tests from the `frontend` folder.
 
@@ -202,7 +201,7 @@ The frontend was originally created using [Create React App](https://create-reac
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
 
-## VII. Running End-User Acceptance Tests
+## VII. Running User Acceptance Tests
 
 1.  Run Cypress from the `frontend` folder.
 
