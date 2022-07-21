@@ -1,6 +1,6 @@
 # quantic-test-course
 
-This repository supports the Software Testing Course for the Masters of Software Engineering at [quantic.edu](https://quantic.edu).
+This repository supports the Software Testing course for the Masters of Science in Software Design and Engineering degree program at Quantic School of Business & Technology.
 
 ## Table of Contents
 
@@ -21,36 +21,31 @@ This repository supports the Software Testing Course for the Masters of Software
 
 ![Hangry Hippo](./frontend/public/hangry-hippo.gif)
 
-Hangry Hippo is a fictitious fast food company. They are developing a new online ordering system.
+Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
-During the course, we will be developing different types of test cases to verify the online ordering functionality.
+## I. Requirements
 
-## Requirements
+The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
-The Hangry Hippo application is divided into a Backend and a Frontend. It is preferred, but not required that you have the [git command line interface](https://git-scm.com/downloads) (cli) installed and a [GitHub account](https://github.com/signup).
+### a) Backend
 
-### Backend
+The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
-The backend was originally created using [django](https://www.djangoproject.com/) and [djangorestframework](https://www.django-rest-framework.org/). For more information, please read
-https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/
+The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python Version Manager](https://realpython.com/intro-to-pyenv/).
 
-The backend requires [Python 3.8](https://www.python.org/downloads/). We recommend using a [Python Version Manager](https://realpython.com/intro-to-pyenv/).
+### b) Frontend
 
-### Frontend
+The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
 
-The frontend was originally created using [Create-React-App](https://create-react-app.dev/).
+## II. Local Installation
 
-The frontend requires [Node 18](https://nodejs.org/en/download/current/). We recommend using [Node Version Manager](https://github.com/nvm-sh/nvm) to manage multiple node versions.
-
-## Local Installation
-
-1.  Clone the repo
+1.  Clone the repo.
 
         git clone git@github.com:quasifu/quantic-test-course.git
 
-### To run the Backend
+## III. Running the Backend
 
-1.  Change directory to the backend
+1.  Navigate to the backend directory.
 
     Windows:
     
@@ -60,11 +55,11 @@ The frontend requires [Node 18](https://nodejs.org/en/download/current/). We rec
 
         cd quantic-test-course/backend/hangry_api
 
-2.  Setup a virtual environment.
-
-    > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
+2.  Set up a virtual environment.
 
         python3 -m venv env
+        
+            > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
 
 3.  Activate the environment
 
