@@ -34,7 +34,7 @@ The Hangry Hippo app is divided into a backend and a frontend. It is preferred, 
 
 The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
-The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python Version Manager](https://realpython.com/intro-to-pyenv/).
+The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python version manager](https://realpython.com/intro-to-pyenv/).
 
 
 ### Frontend
