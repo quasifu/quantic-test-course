@@ -2,6 +2,7 @@
 
 This repository supports the Software Testing course for the Masters of Science in Software Design and Engineering degree program at Quantic School of Business & Technology.
 
+
 ## Table of Contents
 
 - [Hangry Hippo - a fictitious company](#hangry-hippo)
@@ -17,15 +18,18 @@ This repository supports the Software Testing course for the Masters of Science 
   - [Run Acceptance Tests](#to-run-end-user-acceptance-tests)
 - [More Information about Testing](#more-information-about-testing-in-this-repo)
 
+
 ## Hangry Hippo
 
 ![Hangry Hippo](./frontend/public/hangry-hippo.gif)
 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
+
 ## I. Requirements
 
 The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
+
 
 ### a) Backend
 
@@ -33,15 +37,18 @@ The app's backend was originally created using [django](https://www.djangoprojec
 
 The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python Version Manager](https://realpython.com/intro-to-pyenv/).
 
+
 ### b) Frontend
 
 The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
+
 
 ## II. Local Installation
 
 1.  Clone the repo.
 
         git clone git@github.com:quasifu/quantic-test-course.git
+
 
 ## III. Running the Backend
 
@@ -55,15 +62,15 @@ The frontend was originally created using [Create React App](https://create-reac
 
         cd quantic-test-course/backend/hangry_api
 
+
 2.  Set up a virtual environment.
 
         python3 -m venv env
         
-            > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
+    > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
 
-3.  Activate the environment
 
-    > **Note:** The `activate` script activates that environment, and your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; for subsequent sessions just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).
+3.  Activate the environment.
 
     Windows:
 
@@ -72,16 +79,29 @@ The frontend was originally created using [Create React App](https://create-reac
     macOS/Linux:
 
         . env/bin/activate
+        
+    > **Note:** The `activate` script activates that environment, after which your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; then, for subsequent sessions, just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).   
 
-4.  Install the dependencies
+
+4.  Install the dependencies.
 
         pip install -r requirements.txt
 
+
 5.  Run the server
 
-    > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so: `.\manage.py runserver` (for Windows) `./manage.py runserver` (for macOS/Linux).
-
           manage.py runserver
+          
+    > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so:
+    
+    Windows:
+
+        .\manage.py runserver
+
+    macOS/Linux:
+
+        ./manage.py runserver      
+
 
 6.  Verify the server is running by accessing the following API's.
 
@@ -117,19 +137,19 @@ The frontend was originally created using [Create React App](https://create-reac
 
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
-### To run backend unit tests
+## IV. Running Back-End Unit Tests
 
-1.  Install the test dependencies
+1.  Install the test dependencies.
 
         pip install pytest django_mock_queries six
 
-2.  Run the tests
-
-    > **Note:** The server shouldn't be running when you run tests.
+2.  Run the tests.
 
         pytest
+        
+    > **Note:** The server should not be running when you run tests.
 
-3.  You should see something like the screen below
+3.  As a result, you should see something like
 
         ================= test session starts ===================
         platform linux -- Python 3.8.13, pytest-7.1.2, pluggy-1.0.0
@@ -140,17 +160,17 @@ The frontend was originally created using [Create React App](https://create-reac
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
 
-### To run the frontend
+## V. Running the Frontend
 
-1.  Change directory to the frontend
+1.  Navigate to the frontend directory.
 
         cd frontend
 
-2.  Install dependencies
+2.  Install the dependencies.
 
         npm install
 
-3.  Run the server
+3.  Run the server.
 
         npm run start
 
@@ -158,23 +178,21 @@ The frontend was originally created using [Create React App](https://create-reac
 
     ![Web site](./readme-images/hangry-hippo-web.png)
 
-5.  [Optional] to use the local backend apis, make sure both servers (frontend and backend) are running. Then, update ./frontend/src/utils/constants.js
-
-    Replace this line:
+5.  [Optional] To use the local back-end APIs, make sure both servers (frontend and backend) are running. Then, update ./frontend/src/utils/constants.js by replacing this line:
 
         export const API_URL = 'http://hangry-api-dev.us-east-1.elasticbeanstalk.com';
 
-    With this line:
+    with this line:
 
         export const API_URL = 'http://localhost:8000';
 
-### To run frontend tests
+## VI. Running Front-End Tests
 
-1.  Run the tests from the `frontend` folder
+1.  Run the tests from the `frontend` folder.
 
         npm test
 
-2.  You should see something like...
+2.  As a result, you should see something like
 
          PASS  src/pages/Home/Home.test.js
          PASS  src/App.test.js
@@ -184,13 +202,13 @@ The frontend was originally created using [Create React App](https://create-reac
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
 
-### To run End User Acceptance tests
+## VII. Running End-User Acceptance Tests
 
-1.  Run Cypress from the `frontend` folder
+1.  Run Cypress from the `frontend` folder.
 
         node_modules/.bin/cypress run
 
-2.  Verify that the tests were run. You should see something like..
+2.  Verify that the tests were run. You should see something like
 
         ==============================================
         (Run Starting)
@@ -253,11 +271,11 @@ The frontend was originally created using [Create React App](https://create-reac
 
         /frontend/cypress/videos/spec.cy.js.mp4
 
-4.  [Optional] To run the tests using the Cypress application, open cypress using
+4.  [Optional] To run the tests using the Cypress application, open cypress.
 
         node_modules/.bin/cypress open
 
-## More Information about Testing in this Repo
+## VIII. More Information about Testing in this Repo
 
 ### Unit Testing
 
