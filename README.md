@@ -7,15 +7,15 @@ This repository supports the Software Testing course for the Masters of Science 
 
 - What is [Hangry Hippo](#hangry-hippo)?
 - [Requirements](#requirements)
-  - [Backend](#a)-backend)
-  - [Frontend](#b)-frontend)
-- [II. Local Installation](#local-installation)
-- [III. Running the Backend](#running-the-backend)
-- [IV. Running Backend Unit Tests](#running-backend-unit-tests)
-- [V. Running the Frontend](#running-the-frontend)
-- [VI. Running Frontend Functional Tests](#running-frontend-functional-tests)
-- [VII. Running User Acceptance Tests](#running-user-acceptance-tests)
-- [VIII. More Information about Testing](#more-information-about-testing-in-this-repo)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+- [Local Installation](#local-installation)
+- [Running the Backend](#running-the-backend)
+- [Running Backend Unit Tests](#running-backend-unit-tests)
+- [Running the Frontend](#running-the-frontend)
+- [Running Frontend Functional Tests](#running-frontend-functional-tests)
+- [Running User Acceptance Tests](#running-user-acceptance-tests)
+- [More Information about Testing](#more-information-about-testing-in-this-repo)
 
 
 ## Hangry Hippo
@@ -25,31 +25,31 @@ This repository supports the Software Testing course for the Masters of Science 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
 
-## I. Requirements
+## Requirements
 
 The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
 
-### a) Backend
+### Backend
 
 The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
 The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python Version Manager](https://realpython.com/intro-to-pyenv/).
 
 
-### b) Frontend
+### Frontend
 
 The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
 
 
-## II. Local Installation
+## Local Installation
 
 1.  Clone the repo.
 
         git clone git@github.com:quasifu/quantic-test-course.git
 
 
-## III. Running the Backend
+## Running the Backend
 
 1.  Navigate to the backend directory.
 
@@ -136,7 +136,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
-## IV. Running Backend Unit Tests
+## Running Backend Unit Tests
 
 1.  Install the test dependencies.
 
@@ -159,7 +159,7 @@ The frontend was originally created using [Create React App](https://create-reac
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
 
-## V. Running the Frontend
+## Running the Frontend
 
 1.  Navigate to the frontend directory.
 
@@ -185,7 +185,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
         export const API_URL = 'http://localhost:8000';
 
-## VI. Running Frontend Functional Tests
+## Running Frontend Functional Tests
 
 1.  Run the tests from the `frontend` folder.
 
@@ -201,7 +201,7 @@ The frontend was originally created using [Create React App](https://create-reac
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
 
-## VII. Running User Acceptance Tests
+## Running User Acceptance Tests
 
 1.  Run Cypress from the `frontend` folder.
 
@@ -274,7 +274,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
         node_modules/.bin/cypress open
 
-## VIII. More Information about Testing in this Repo
+## More Information about Testing in this Repo
 
 ### Unit Testing
 
