@@ -20,9 +20,7 @@ This repository supports the Software Testing course for the Masters of Science 
 
 ## Hangry Hippo
 
-\begin{center}
-<img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="300"/>
-\end{center}
+<img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="200"/>
 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
@@ -62,14 +60,12 @@ The frontend was originally created using [Create React App](https://create-reac
     macOS/Linux:
 
         cd quantic-test-course/backend/hangry_api
-
-
+        
 2.  Set up a virtual environment.
 
         python3 -m venv env
         
     > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
-
 
 3.  Activate the environment.
 
@@ -83,11 +79,9 @@ The frontend was originally created using [Create React App](https://create-reac
         
     > **Note:** The `activate` script activates that environment, after which your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; then, for subsequent sessions, just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).   
 
-
 4.  Install the dependencies.
 
         pip install -r requirements.txt
-
 
 5.  Run the server
 
@@ -102,7 +96,6 @@ The frontend was originally created using [Create React App](https://create-reac
     macOS/Linux:
 
         ./manage.py runserver      
-
 
 6.  Verify the server is running by accessing the following API's.
 
@@ -138,6 +131,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
+
 ## Running Backend Unit Tests
 
 1.  Install the test dependencies.
@@ -160,6 +154,7 @@ The frontend was originally created using [Create React App](https://create-reac
         tests/test_DeliveryCost.py ...                     [ 60%]
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
+
 
 ## Running the Frontend
 
@@ -187,6 +182,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
         export const API_URL = 'http://localhost:8000';
 
+
 ## Running Frontend Functional Tests
 
 1.  Run the tests from the `frontend` folder.
@@ -202,6 +198,7 @@ The frontend was originally created using [Create React App](https://create-reac
          Snapshots:   0 total
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
+
 
 ## Running User Acceptance Tests
 
@@ -276,26 +273,32 @@ The frontend was originally created using [Create React App](https://create-reac
 
         node_modules/.bin/cypress open
 
+
 ## More Information about Testing in this Repo
 
 ### Unit Testing
 
 Unit testing is implemented in the `backend` using [pytest](https://docs.pytest.org/en/7.1.x/getting-started.html).
 
+
 ### Functional Testing
 
 Functional testing is implemented in the `frontend` for the `Home` page using [jest](https://jestjs.io/).
+
 
 ### Acceptance Testing
 
 Acceptance tests are implemented in the `frontend` for `Home` and `Order` pages using [cypress](https://www.cypress.io/).
 
+
 ### Security Testing
 
 Security testing is implemented in the `frontend` using [ZAP](https://owasp.org/www-project-zap/). For more information on security testing, visit [OWASP](https://owasp.org/).
 
+
 ### Automated Testing
 
 All of the tests are automated into the CI/CD pipeline using [GitHub Actions](https://github.com/features/actions). GitHub Actions are defined in this repository in the `.github/workflows` folder. Feel free to view the automated runs under the [Actions](https://github.com/quasifu/quantic-test-course/actions) tab of this repository.
+
 
 &copy; 2022 Quantic School of Business and Technology
