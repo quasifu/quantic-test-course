@@ -6,9 +6,9 @@ This repository supports the Software Testing course for the Masters of Science 
 ## Table of Contents
 
 - What is [Hangry Hippo](#hangry-hippo)?
-- [I. Requirements](#requirements)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
+- [Requirements](#requirements)
+  - [Backend](#a)-backend)
+  - [Frontend](#b)-frontend)
 - [II. Local Installation](#local-installation)
 - [III. Running the Backend](#running-the-backend)
 - [IV. Running Backend Unit Tests](#running-backend-unit-tests)
