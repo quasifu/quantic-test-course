@@ -6,7 +6,7 @@ This repository supports the Software Testing course for the Masters of Science 
 ## Table of Contents
 
 - What is [Hangry Hippo](#hangry-hippo)?
-- [Requirements](#requirements)
+- [Requirements](#i.-requirements)
   - [Backend](#backend)
   - [Frontend](#frontend)
 - [Local Installation](#local-installation)
@@ -25,7 +25,7 @@ This repository supports the Software Testing course for the Masters of Science 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
 
-## Requirements
+## I. Requirements
 
 The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
