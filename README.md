@@ -3,12 +3,13 @@
 This repository supports the Software Testing course for the Masters of Science in Software Design and Engineering program at Quantic School of Business & Technology.
 
 
+
 ## Table of Contents
 
 - What is [Hangry Hippo](#hangry-hippo)?
-- [Requirements](#i.-requirements)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
+- [Requirements](#requirements)
+  - [Backend](#backend-requirements)
+  - [Frontend](#frontend-requirements)
 - [Local Installation](#local-installation)
 - [Running the Backend](#running-the-backend)
 - [Running Backend Unit Tests](#running-backend-unit-tests)
@@ -18,6 +19,7 @@ This repository supports the Software Testing course for the Masters of Science 
 - [More Information about Testing](#more-information-about-testing-in-this-repo)
 
 
+
 ## Hangry Hippo
 
 <img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="200"/>
@@ -25,21 +27,21 @@ This repository supports the Software Testing course for the Masters of Science 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
 
 
-## I. Requirements
+
+## Requirements
 
 The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
-
-### Backend
+### Backend Requirements
 
 The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
 The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python version manager](https://realpython.com/intro-to-pyenv/).
 
-
-### Frontend
+### Frontend Requirements
 
 The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
+
 
 
 ## Local Installation
@@ -47,6 +49,7 @@ The frontend was originally created using [Create React App](https://create-reac
 1.  Clone the repo.
 
         git clone git@github.com:quasifu/quantic-test-course.git
+
 
 
 ## Running the Backend
@@ -132,6 +135,7 @@ The frontend was originally created using [Create React App](https://create-reac
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
 
+
 ## Running Backend Unit Tests
 
 1.  Install the test dependencies.
@@ -154,6 +158,7 @@ The frontend was originally created using [Create React App](https://create-reac
         tests/test_DeliveryCost.py ...                     [ 60%]
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
+
 
 
 ## Running the Frontend
@@ -183,6 +188,7 @@ The frontend was originally created using [Create React App](https://create-reac
         export const API_URL = 'http://localhost:8000';
 
 
+
 ## Running Frontend Functional Tests
 
 1.  Run the tests from the `frontend` folder.
@@ -198,6 +204,7 @@ The frontend was originally created using [Create React App](https://create-reac
          Snapshots:   0 total
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
+
 
 
 ## Running User Acceptance Tests
@@ -274,31 +281,29 @@ The frontend was originally created using [Create React App](https://create-reac
         node_modules/.bin/cypress open
 
 
+
 ## More Information about Testing in this Repo
 
 ### Unit Testing
 
 Unit testing is implemented in the `backend` using [pytest](https://docs.pytest.org/en/7.1.x/getting-started.html).
 
-
 ### Functional Testing
 
 Functional testing is implemented in the `frontend` for the `Home` page using [jest](https://jestjs.io/).
-
 
 ### Acceptance Testing
 
 Acceptance tests are implemented in the `frontend` for `Home` and `Order` pages using [cypress](https://www.cypress.io/).
 
-
 ### Security Testing
 
 Security testing is implemented in the `frontend` using [ZAP](https://owasp.org/www-project-zap/). For more information on security testing, visit [OWASP](https://owasp.org/).
 
-
 ### Automated Testing
 
 All of the tests are automated into the CI/CD pipeline using [GitHub Actions](https://github.com/features/actions). GitHub Actions are defined in this repository in the `.github/workflows` folder. Feel free to view the automated runs under the [Actions](https://github.com/quasifu/quantic-test-course/actions) tab of this repository.
+
 
 
 &copy; 2022 Quantic School of Business and Technology
