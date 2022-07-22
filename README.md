@@ -32,13 +32,13 @@ Hangry Hippo is a (fictitious) new fast-food company. They’re currently develo
 
 The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
-### Backend Requirements
+#### Backend Requirements
 
 The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
 The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python version manager](https://realpython.com/intro-to-pyenv/).
 
-### Frontend Requirements
+#### Frontend Requirements
 
 The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
 
