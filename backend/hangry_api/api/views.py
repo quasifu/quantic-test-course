@@ -80,7 +80,11 @@ class DeliveryView(APIView):
         return Response({"status": "success", "data": deliveryCost}, status=status.HTTP_200_OK)
 
 class SubtotalView(APIView):
-    def get(self, request, name=None, distance=0):
+    #GET function to handle the subtotal api.  It takes the order name as input.
+    def get(self, request, name=None):
+        #gets items for order by name from the database
         items = Order.objects.filter(name__iexact=name)
+        #passes items to the subtotal function
         subtotal = Subtotal.calculate(items)
+        #returns the subtotal as a JSON object
         return Response({"status": "success", "data": subtotal}, status=status.HTTP_200_OK)
