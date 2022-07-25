@@ -33,7 +33,7 @@ describe('Test Order', () => {
           return Promise.resolve({
             data: {
               status: 'success',
-              data: 7.5,
+              data: 5.0,
             },
           });
         case `${API_URL}/api/subtotal/test-fun`:
@@ -87,11 +87,10 @@ describe('Test Order', () => {
     //Once the dropdown value for the delivery distance is changed, an API call will be made to determine the delivery fee
     //Wait for the API call to return and the delivery fee to be updated
     await waitFor(() => {
-      expect(screen.getAllByText('$5.00')).toHaveLength(1);
+      //The delivery fee and the subtotal should be $5.00.  So there should be 2.
+      expect(screen.getAllByText('$5.00')).toHaveLength(2);
     });
-    //Check the sub total
-    expect(screen.getAllByText('$7.50')).toHaveLength(1);
     //Check the total.
-    expect(screen.getAllByText('$12.50')).toHaveLength(1);
+    expect(screen.getAllByText('$10.00')).toHaveLength(1);
   });
 });

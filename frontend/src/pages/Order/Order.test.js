@@ -33,7 +33,7 @@ describe('Test Order', () => {
           return Promise.resolve({
             data: {
               status: 'success',
-              data: 7.5,
+              data: 5.0,
             },
           });
         case `${API_URL}/api/subtotal/test-fun`:
