@@ -26,7 +26,7 @@ describe('Test Order', () => {
           return Promise.resolve({
             data: {
               status: 'success',
-              data: 5,
+              data: 2.5,
             },
           });
         case `${API_URL}/api/delivery/test-fun/5`:
@@ -61,9 +61,9 @@ describe('Test Order', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getAllByText('$5.00')).toHaveLength(2);
+      expect(screen.getAllByText('$2.50')).toHaveLength(1);
     });
-    expect(screen.getAllByText('$10.00')).toHaveLength(1);
+    expect(screen.getAllByText('$5.00')).toHaveLength(1);
   });
 
   it('Test Update Delivery Fee', async () => {

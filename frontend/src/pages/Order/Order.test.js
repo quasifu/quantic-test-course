@@ -26,7 +26,7 @@ describe('Test Order', () => {
           return Promise.resolve({
             data: {
               status: 'success',
-              data: 5,
+              data: 2.5,
             },
           });
         case `${API_URL}/api/delivery/test-fun/5`:
