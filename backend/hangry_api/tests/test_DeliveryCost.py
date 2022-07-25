@@ -17,7 +17,7 @@ def test_LotsOfItems():
 def test_LittleItems():
   order = MockSet()
   order.add(MockModel(quantity=2))
-  order.add(MockModel(quantity=1))
+  order.add(MockModel(quantity=2))
   cost = Delivery.calculate(order,3)
   assert cost == 2.5
 
