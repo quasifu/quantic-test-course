@@ -8,13 +8,13 @@ This repository supports the Software Testing course for the MS Software Design 
 
 - What is [Hangry Hippo](#hangry-hippo)?
 - [Requirements](#requirements)
-  - [Backend](#backend-requirements)
-  - [Frontend](#frontend-requirements)
+  - [Back End](#back-end-requirements)
+  - [Front End](#front-end-requirements)
 - [Local Installation](#local-installation)
-- [Running the Backend](#running-the-backend)
-- [Running Backend Unit Tests](#running-backend-unit-tests)
-- [Running the Frontend](#running-the-frontend)
-- [Running Frontend Functional Tests](#running-frontend-functional-tests)
+- [Running the Back End](#running-the-back-end)
+- [Running Back End Unit Tests](#running-back-end-unit-tests)
+- [Running the Front End](#running-the-front-end)
+- [Running Front End Functional Tests](#running-front-end-functional-tests)
 - [Running User Acceptance Tests](#running-user-acceptance-tests)
 - [More Information about Testing](#more-information-about-testing-in-this-repo)
 
@@ -30,17 +30,17 @@ Hangry Hippo is a (fictitious) new fast-food company. They’re currently develo
 
 ## Requirements
 
-The Hangry Hippo app is divided into a backend and a frontend. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
+The Hangry Hippo app is divided into a back end and a front end. It is preferred, but not required, that you have a [GitHub account](https://github.com/signup) and the [Git command line interface](https://git-scm.com/downloads) (cli) installed.
 
-#### Backend Requirements
+#### Back End Requirements
 
-The app's backend was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
+The app's back end was originally created using [django](https://www.djangoproject.com/) and the [django REST framework](https://www.django-rest-framework.org/). For more information, read [here](https://stackabuse.com/creating-a-rest-api-with-django-rest-framework/).
 
-The backend requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python version manager](https://realpython.com/intro-to-pyenv/).
+The back end requires [Python 3.8](https://www.python.org/downloads/). To make sure this is what your machine is working with, we recommend using this [Python version manager](https://realpython.com/intro-to-pyenv/).
 
-#### Frontend Requirements
+#### Front End Requirements
 
-The frontend was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
+The front end was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
 
 
 
@@ -52,9 +52,9 @@ The frontend was originally created using [Create React App](https://create-reac
 
 
 
-## Running the Backend
+## Running the Back End
 
-1.  Navigate to the backend directory.
+1.  Navigate to the `backend` directory.
 
     Windows:
     
@@ -136,7 +136,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
 
 
-## Running Backend Unit Tests
+## Running Back End Unit Tests
 
 1.  Install the test dependencies.
 
@@ -161,9 +161,9 @@ The frontend was originally created using [Create React App](https://create-reac
 
 
 
-## Running the Frontend
+## Running the Front End
 
-1.  Navigate to the frontend directory.
+1.  Navigate to the `frontend` directory.
 
         cd frontend
 
@@ -179,7 +179,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
     ![Web site](./readme-images/hangry-hippo-web.png)
 
-5.  [Optional] To use the local back-end APIs, make sure both servers (frontend and backend) are running. Then, update ./frontend/src/utils/constants.js by replacing this line:
+5.  [Optional] To use the local back-end APIs, make sure both servers (front-end and back-end) are running. Then, update ./frontend/src/utils/constants.js by replacing this line:
 
         export const API_URL = 'http://hangry-api-dev.us-east-1.elasticbeanstalk.com';
 
@@ -189,9 +189,9 @@ The frontend was originally created using [Create React App](https://create-reac
 
 
 
-## Running Frontend Functional Tests
+## Running Front End Functional Tests
 
-1.  Run the tests from the `frontend` folder.
+1.  Run the tests from the `frontend` directory.
 
         npm test
 
@@ -209,7 +209,7 @@ The frontend was originally created using [Create React App](https://create-reac
 
 ## Running User Acceptance Tests
 
-1.  Run Cypress from the `frontend` folder.
+1.  Run Cypress from the `frontend` directory.
 
         node_modules/.bin/cypress run
 
@@ -286,19 +286,19 @@ The frontend was originally created using [Create React App](https://create-reac
 
 ### Unit Testing
 
-Unit testing is implemented in the `backend` using [pytest](https://docs.pytest.org/en/7.1.x/getting-started.html).
+Unit testing is implemented in the `backend` directory using [pytest](https://docs.pytest.org/en/7.1.x/getting-started.html).
 
 ### Functional Testing
 
-Functional testing is implemented in the `frontend` for the `Home` page using [jest](https://jestjs.io/).
+Functional testing is implemented in the `frontend` directory for the `Home` page using [jest](https://jestjs.io/).
 
 ### Acceptance Testing
 
-Acceptance tests are implemented in the `frontend` for `Home` and `Order` pages using [cypress](https://www.cypress.io/).
+Acceptance tests are implemented in the `frontend` directory for the `Home` and `Order` pages using [cypress](https://www.cypress.io/).
 
 ### Security Testing
 
-Security testing is implemented in the `frontend` using [ZAP](https://owasp.org/www-project-zap/). For more information on security testing, visit [OWASP](https://owasp.org/).
+Security testing is implemented in the `frontend` directory using [ZAP](https://owasp.org/www-project-zap/). For more information on security testing, visit [OWASP](https://owasp.org/).
 
 ### Automated Testing
 
