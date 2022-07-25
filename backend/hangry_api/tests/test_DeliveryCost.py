@@ -13,18 +13,35 @@ def test_LotsOfItems():
   #Assert
   assert cost == 7.5
 
-
 def test_LittleItems():
-  order = MockSet()
-  order.add(MockModel(quantity=2))
-  order.add(MockModel(quantity=2))
-  cost = Delivery.calculate(order,3)
-  assert cost == 2.5
+  #Arrange
+  # TODO: Arrange the items to run the test
+  #Act
+  # TODO: Call the function that will be tested
+  #Assert
+  # TODO: replace the return true with an assert to test the value returned.
+  return True
+
+
+# def test_LittleItems_Answer():
+# #Arrange
+#   order = MockSet()
+#   order.add(MockModel(quantity=2))
+#   order.add(MockModel(quantity=2))
+#   delivery_distance = 3
+# #Act
+#   cost = Delivery.calculate(order,delivery_distance)
+# #Assert
+#   assert cost == 2.5
 
 def test_MiddleOfTheRoadItems():
+  #Arrange
   order = MockSet()
   order.add(MockModel(quantity=2))
   order.add(MockModel(quantity=2))
   order.add(MockModel(quantity=2))
-  cost = Delivery.calculate(order,4)
+  delivery_distance = 4
+  #Act
+  cost = Delivery.calculate(order,delivery_distance)
+  #Assert
   assert cost == 5
