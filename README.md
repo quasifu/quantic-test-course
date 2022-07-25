@@ -2,8 +2,6 @@
 
 This repository supports the Software Testing course for the MS Software Design and Engineering program at Quantic School of Business & Technology.
 
-
-
 ## Table of Contents
 
 - What is [Hangry Hippo](#hangry-hippo)?
@@ -18,15 +16,11 @@ This repository supports the Software Testing course for the MS Software Design 
 - [Running User Acceptance Tests](#running-user-acceptance-tests)
 - [More Information about Testing](#more-information-about-testing-in-this-repo)
 
-
-
 ## Hangry Hippo
 
 <img src="./frontend/public/hangry-hippo.gif" alt="drawing" width="200"/>
 
 Hangry Hippo is a (fictitious) new fast-food company. They’re currently developing an online ordering system to debut during their grand opening, which means they need to implement sound testing protocols to make sure the system works perfectly from the start.
-
-
 
 ## Requirements
 
@@ -42,32 +36,28 @@ The back end requires [Python 3.8](https://www.python.org/downloads/). To make s
 
 The front end was originally created using [Create React App](https://create-react-app.dev/), and it requires [Node 18](https://nodejs.org/en/download/current/). To make sure this is what your machine is working with, we recommend using this [Node version manager](https://github.com/nvm-sh/nvm).
 
-
-
 ## Local Installation
 
 1.  Clone the repo.
 
         git clone git@github.com:quasifu/quantic-test-course.git
 
-
-
 ## Running the Back End
 
 1.  Navigate to the `backend` directory.
 
     Windows:
-    
+
         cd quantic-test-courses\backend\hangry_api
-    
+
     macOS/Linux:
 
         cd quantic-test-course/backend/hangry_api
-        
+
 2.  Set up a virtual environment.
 
         python3 -m venv env
-        
+
     > **Note:** `python3 -m venv env` sets up a separate environment where pip can install packages without affecting your global Python installation (if `python3` fails, try `python`).
 
 3.  Activate the environment.
@@ -79,8 +69,8 @@ The front end was originally created using [Create React App](https://create-rea
     macOS/Linux:
 
         . env/bin/activate
-        
-    > **Note:** The `activate` script activates that environment, after which your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; then, for subsequent sessions, just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).   
+
+    > **Note:** The `activate` script activates that environment, after which your command prompt will change to reflect that you're in the `env` environment. You only need to create the environment once; then, for subsequent sessions, just activate the environment with the `activate` script. To exit the environment, use the `deactivate` command. You can learn more about the `venv` module [here](https://docs.python.org/3/library/venv.html).
 
 4.  Install the dependencies.
 
@@ -89,16 +79,17 @@ The front end was originally created using [Create React App](https://create-rea
 5.  Run the server
 
           manage.py runserver
-          
+
+
     > **Note:** If the current working directory isn't included in your OS's PATH environment variable, you'll need to prepend it to the command like so:
-    
+
     Windows:
 
         .\manage.py runserver
 
     macOS/Linux:
 
-        ./manage.py runserver      
+        ./manage.py runserver
 
 6.  Verify the server is running by accessing the following API's.
 
@@ -134,18 +125,16 @@ The front end was originally created using [Create React App](https://create-rea
 
       ![Subtotal API](./readme-images/subtotal-api.jpeg)
 
-
-
 ## Running Back End Unit Tests
 
 1.  Install the test dependencies.
 
-        pip install pytest django_mock_queries six
+        pip install pytest django_mock_queries six coverage
 
 2.  Run the tests.
 
-        pytest
-        
+        coverage run -m --source=./hangry_api pytest
+
     > **Note:** The server should not be running when you run tests.
 
 3.  As a result, you should see something like
@@ -159,7 +148,37 @@ The front end was originally created using [Create React App](https://create-rea
         tests/test_SubtotalCost.py ..                      [100%]
         ================= 5 passed in 0.16s =====================
 
+4.  [Optional] Generate a coverage report:
 
+        coverage report
+
+    Example Report:
+
+        Name                                                     Stmts   Miss  Cover
+        ----------------------------------------------------------------------------
+        hangry_api/api/__init__.py                                   0      0   100%
+        hangry_api/api/admin.py                                      5      5     0%
+        hangry_api/api/apps.py                                       4      4     0%
+        hangry_api/api/controllers.py                               16      0   100%
+        hangry_api/api/migrations/0001_initial.py                    5      5     0%
+        hangry_api/api/migrations/0002_food_category_alter_food_p... 5      5     0%
+        hangry_api/api/migrations/__init__.py                        0      0   100%
+        hangry_api/api/models.py                                    17     17     0%
+        hangry_api/api/serializers.py                               23     23     0%
+        hangry_api/api/tests.py                                      1      1     0%
+        hangry_api/api/urls.py                                       3      3     0%
+        hangry_api/api/views.py                                     71     71     0%
+        hangry_api/hangry_api/__init__.py                            0      0   100%
+        hangry_api/hangry_api/asgi.py                                4      4     0%
+        hangry_api/hangry_api/settings.py                           19     19     0%
+        hangry_api/hangry_api/urls.py                                3      3     0%
+        hangry_api/hangry_api/wsgi.py                                4      4     0%
+        hangry_api/manage.py                                        12     12     0%
+        hangry_api/tests/__init__.py                                 0      0   100%
+        hangry_api/tests/test_DeliveryCost.py                       22      0   100%
+        hangry_api/tests/test_SubtotalCost.py                       15      0   100%
+        ----------------------------------------------------------------------------
+        TOTAL                                                      229    176    23%
 
 ## Running the Front End
 
@@ -187,8 +206,6 @@ The front end was originally created using [Create React App](https://create-rea
 
         export const API_URL = 'http://localhost:8000';
 
-
-
 ## Running Front End Functional Tests
 
 1.  Run the tests from the `frontend` directory.
@@ -204,8 +221,6 @@ The front end was originally created using [Create React App](https://create-rea
          Snapshots:   0 total
          Time:        2.715 s, estimated 3 s
          Ran all test suites.
-
-
 
 ## Running User Acceptance Tests
 
@@ -280,8 +295,6 @@ The front end was originally created using [Create React App](https://create-rea
 
         node_modules/.bin/cypress open
 
-
-
 ## More Information about Testing in this Repo
 
 ### Unit Testing
@@ -303,7 +316,5 @@ Security testing is implemented in the `frontend` directory using [ZAP](https://
 ### Automated Testing
 
 All of the tests are automated into the CI/CD pipeline using [GitHub Actions](https://github.com/features/actions). GitHub Actions are defined in this repository in the `.github/workflows` folder. Feel free to view the automated runs under the [Actions](https://github.com/quasifu/quantic-test-course/actions) tab of this repository.
-
-
 
 &copy; 2022 Quantic School of Business and Technology
