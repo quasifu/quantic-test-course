@@ -24,9 +24,9 @@ jobs:
         run: |
           sed -i 's/DEBUG = True/DEBUG = False/g' hangry_api/hangry_api/settings.py
       - name: Run PyCharm Security
-          uses: tonybaloney/pycharm-security@master
+        uses: tonybaloney/pycharm-security@master
   build_and_test:
-    needs: [security_test] 
+    needs: [security_test]
     runs-on: ubuntu-latest
     defaults:
       run:
