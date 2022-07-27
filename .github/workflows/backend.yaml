@@ -14,14 +14,19 @@ on:
 jobs:
   security_test:
     runs-on: ubuntu-latest
+    container:
+      # A Docker image with Semgrep installed. Don't change this.
+      image: returntocorp/semgrep
     defaults:
       run:
         working-directory: backend
-    name: Execute the pycharm-security action
+    name: Execute the semgrep security action
+    if: (github.actor != 'dependabot[bot]')
     steps:
       - uses: actions/checkout@v2
-      - name: Run PyCharm Security
-        uses: tonybaloney/pycharm-security@master
+      - run: semgrep ci
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
   build_and_test:
     needs: [security_test]
     runs-on: ubuntu-latest
