@@ -32,3 +32,7 @@ urllib3==1.26.10
 Werkzeug==2.1.2
 wsgi-request-logger==0.4.6
 zappa==0.54.1
+pycparser==2.21
+PyJWT==2.4.0
+cryptography==37.0.4
+cffi==1.15.1

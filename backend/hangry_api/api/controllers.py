@@ -1,3 +1,5 @@
+import jwt
+
 class Delivery():
   def calculate(order,distance):
     items = 0
@@ -19,5 +21,5 @@ class Subtotal():
 
 class Password():
   def get():
-    password = 'passw0rd'
-    return password
+    encoded = jwt.encode({"some": "payload"}, "secret", algorithm="HS256")
+    return encoded
