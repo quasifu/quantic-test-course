@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - lesson-2
+      - new-main
 jobs:
   deploy:
     runs-on: ubuntu-latest
