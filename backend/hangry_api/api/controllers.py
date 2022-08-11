@@ -4,7 +4,7 @@ class Delivery():
     for item in order:
       items += item.quantity
     if items > 10 and distance > 5:
-      return 7.50
+      return 8.50
     elif items > 5 and distance > 3:
       return 5
     else:
