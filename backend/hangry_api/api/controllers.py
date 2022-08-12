@@ -16,3 +16,15 @@ class Subtotal():
     for item in order:
       cost += item.quantity * item.item.price
     return cost
+
+class Tax():
+  def calculate(subTotal, deliveryFee):
+    tax = (subTotal + deliveryFee) * 0.0825
+    return (0,round(tax,2)) [ round(tax,2) > 0 ]
+
+#Completed Total
+class Total():
+  def calculate(order, deliveryFee):
+    subTotal = Subtotal.calculate(order)
+    total = (subTotal + deliveryFee) * 1.0825
+    return (0,round(total,2)) [ round(total,2) > 0 ]
