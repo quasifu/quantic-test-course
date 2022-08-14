@@ -40,7 +40,7 @@ The front end was originally created using [Create React App](https://create-rea
 
 1.  Clone the repo.
 
-        git clone git@github.com:quasifu/quantic-test-course.git
+        git clone git@github.com:<your GitHub username>/clean-test-course.git
 
 ## Running the Back End
 
