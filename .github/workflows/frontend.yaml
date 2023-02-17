@@ -38,7 +38,7 @@ jobs:
         with:
           role-to-assume: ${ secrets.AWS_IAM_ROLE }
           role-session-name: AWS_SESSION_TOKEN
-        aws-region: us-east-1
+          aws-region: us-east-1
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v20
         with:
